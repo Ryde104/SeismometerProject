@@ -8,6 +8,7 @@ from flask import Flask, render_template, request, jsonify
 from pymongo import MongoClient
 
 app = Flask(__name__)
+#client = MongoClient("mongodb://157.55.164.231:27017")
 client = MongoClient(port=27017)
 db=client.pressure
 
@@ -31,6 +32,7 @@ def post():
     result=db.pressure.insert_one(test)
     value = request.json['psi']
     return value
+    #return request.json['psi']
     
 
 if __name__ == "__main__":
