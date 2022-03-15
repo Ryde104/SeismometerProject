@@ -30,13 +30,14 @@ def receive():
 @app.route('/post', methods=['POST']) 
 def post():
 
-    test = {
-        'psi' : request.json['psi']
-    }
-    result=db.pressure.insert_one(test)
-    value = request.json['psi']
-    return value
-    #return request.json['psi']
+    print (request.data)
+    #test = {
+    #    'psi' : request.json['psi']
+    #}
+    #result=db.pressure.insert_one(test)
+    #value = request.json['psi']
+    #return value
+    return request.json['psi']
     
 
 if __name__ == "__main__":
