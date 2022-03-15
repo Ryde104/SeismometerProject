@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: seismic
-  replicas: 10 # tells deployment to run 1 pods matching the template
+  replicas: 1 # tells deployment to run 1 pods matching the template
   template: # create pods using pod definition in this template
     metadata:
       labels:
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: seismic
-        image: danimalcontainers.azurecr.io/flask:2
+        image: danimalcontainers.azurecr.io/flask:6
         ports:
         - containerPort: 5000
 ---

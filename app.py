@@ -9,7 +9,11 @@ from pymongo import MongoClient
 
 app = Flask(__name__)
 #client = MongoClient("mongodb://157.55.164.231:27017")
-client = MongoClient(port=27017)
+#client = MongoClient("mongodb://seismic:27017")
+#client = MongoClient("mongodb://10.0.45.171:27017")
+
+client = MongoClient('mongo', 27017)
+#client = MongoClient(port=27017)
 db=client.pressure
 
 @app.route('/')
