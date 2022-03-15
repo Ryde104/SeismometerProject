@@ -6,6 +6,10 @@ from unicodedata import name
 from unittest import result
 from flask import Flask, render_template, request, jsonify
 from pymongo import MongoClient
+import os
+
+print("Web Hook")
+print(os.environ["webhook"])
 
 app = Flask(__name__)
 #client = MongoClient("mongodb://157.55.164.231:27017")

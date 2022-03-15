@@ -12,11 +12,18 @@ spec:
       labels:
         app: seismic
     spec:
-      containers:
+      containers:     
       - name: seismic
-        image: danimalcontainers.azurecr.io/flask:6
+        image: danimalcontainers.azurecr.io/flask:8
         ports:
         - containerPort: 5000
+        env:
+        - name: webhook
+          value: https://stackoverflow.com/questions
+        - name: threshold
+          value: 3000
+        - name: PYTHONUNBUFFERED
+          value: "1"
 ---
 apiVersion: apps/v1
 kind: Deployment
